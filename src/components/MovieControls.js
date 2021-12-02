@@ -1,5 +1,12 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
+import {FontAwesomeIcon }  from "@fortawesome/react-fontawesome";
+// import { regular } from '@fortawesome/fontawesome-svg-core' // <-- import styles to be used
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+
+
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export const MovieControls = ({ type, movie }) => {
   const {
@@ -14,15 +21,16 @@ export const MovieControls = ({ type, movie }) => {
       {type === "watchlist" && (
         <>
           <button className="ctrl-btn" onClick={() => addMovieToWatched(movie)}>
-            <i className="fa-fw far fa-eye">Eye</i>
-          </button>
+ 
+          <FontAwesomeIcon icon={faEye} />
+      </button>
 
           <button
             className="ctrl-btn"
             onClick={() => removeMovieFromWatchlist(movie.id)}
           >
-            <i className="fa-fw fa fa-times">Times</i>
-            {/* <FontAwesomeIcon icon={['fab', 'times']} /> */}
+                      <FontAwesomeIcon icon={faTimes} />
+
           </button>
         </>
       )}
@@ -30,16 +38,15 @@ export const MovieControls = ({ type, movie }) => {
       {type === "watched" && (
         <>
           <button className="ctrl-btn" onClick={() => moveToWatchlist(movie)}>
-            <i className="fa-fw far fa-eye-slash">slash</i>
+          <FontAwesomeIcon icon={faBookmark}/>
             
-                       {/* <FontAwesomeIcon icon={['fab', 'eye-slash']} /> */}
           </button>
 
           <button
             className="ctrl-btn"
             onClick={() => removeFromWatched(movie.id)}
           >
-            <i className="fa-fw fa fa-times"></i>
+          <FontAwesomeIcon icon={faTimes} />          
           </button>
         </>
       )}
