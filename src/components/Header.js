@@ -6,15 +6,15 @@ export const Header = () => {
               <div className="container">
                   <div className="inner-content">
                       <div className="brand">
-                          <Link to="/">WatchList</Link>
+                          <Link to="/" className="header-text">WatchList</Link>
                       </div>
 
                       <ul className="nav-links">
                           <li>
-                              <Link to="/">Watch List</Link>
+                              <Link to="/" className="header-text">Watch List</Link>
                           </li>
                           <li>
-                              <Link to="/watched">Watched</Link>
+                              <Link to="/watched" className="header-text">Watched</Link>
                           </li>
                           <li>
                               <Link to="/add" className="btn">+Add</Link>
